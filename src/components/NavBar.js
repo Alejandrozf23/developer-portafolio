@@ -1,5 +1,6 @@
 import Link from "next/link"
 import React from "react"
+import Logo from "./Logo"
 
 const NavBar = () => {
     return (
@@ -10,7 +11,7 @@ const NavBar = () => {
                 <Link href="/">Projects</Link>
                 <Link href="/">Articles</Link>
             </nav>
-            <h2>Logo</h2>
+            <Logo/>
             <nav>
                 <Link href="/" target={"_blank"}>T</Link>
                 <Link href="/" target={"_blank"}>T</Link>
