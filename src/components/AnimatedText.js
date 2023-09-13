@@ -6,7 +6,7 @@ const AnimatedText = ({text, className=""}) => {
             <h1 className={`inline-block w-full text-dark font-bold capitalize text-8x1 ${className}`}>
                 {
                     text.split(" ").map((word, index)=>
-                    <span key={word+'-'+index}>{word}&nbsp;</span>)
+                    <span key={word+'-'+index} className="inline-block">{word}&nbsp;</span>)
                 }
             </h1>
         </div>
