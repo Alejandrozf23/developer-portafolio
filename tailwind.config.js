@@ -10,7 +10,7 @@ module.exports = {
     extend: {
       fontSize: {
         '8x1': '6rem',
-        '6x1': '3.75rem;',
+        '6x1': '3.75rem',
       },
       fontFamily: {
         mont: ['var(--font-mont)', ...fontFamily.sans],
