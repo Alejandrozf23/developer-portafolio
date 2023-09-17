@@ -4,11 +4,14 @@ import Link from "next/link";
 
 const Footer = () => {
     return (
-        <footer className="w-full border-t-2 border-solid border-dark">
-            <Layout>
-                <span>Rights</span>
-                <Link href="/">CodeBucks</Link>
-                <Link href="/">Say hello</Link>
+        <footer className="w-full border-t-2 border-solid border-dark font-medium text-lg">
+            <Layout className="py-8 flex items-center justify-between">
+                <span>{new Date().getFullYear()} &copy; All Rights Reserved.</span>
+                <div className="flex items-center">
+                    Build With <span className="text-primary text-2x1 px-1">&#9835;</span>
+                    By&nbsp;<Link href="/" className="underline underline-offset-2" target={"_blank"}>Droopy</Link>
+                </div>
+                <Link href="/" target={"_blank"}>Say hello</Link>
             </Layout>
         </footer>
     )
