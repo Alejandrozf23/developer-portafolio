@@ -76,23 +76,42 @@ const projects = () => {
                                     img={project1}/>
                             </div>
                             <div className=" col-span-6">
-                            <Project title="Crypto Screener Application"
+                                <Project title="Crypto Screener Application"
                                     link="/"
                                     github="/"
                                     type="Featured Project"
                                     img={project1}/>
                             </div>
                             <div className=" col-span-6">
-                                Project-2
+                                <Project title="Crypto Screener Application"
+                                    link="/"
+                                    github="/"
+                                    type="Featured Project"
+                                    img={project1}/>
                             </div>
                             <div className=" col-span-12">
-                                Featured Project
+                                <FeaturedProject title="Crypto Screener Application"
+                                    summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. 
+                                    It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your 
+                                    local currency."
+                                    link="/"
+                                    github="/"
+                                    type="Featured Project"
+                                    img={project1}/>
                             </div>
                             <div className=" col-span-6">
-                                Project-3
+                                <Project title="Crypto Screener Application"
+                                    link="/"
+                                    github="/"
+                                    type="Featured Project"
+                                    img={project1}/>
                             </div>
                             <div className=" col-span-6">
-                                Project-4
+                                <Project title="Crypto Screener Application"
+                                    link="/"
+                                    github="/"
+                                    type="Featured Project"
+                                    img={project1}/>
                             </div>
                         </div>
                 </Layout>
