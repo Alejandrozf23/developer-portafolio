@@ -14,7 +14,7 @@ const FeaturedProject = ({type, title, summary, img, link, github}) => {
     return(
         <article className="w-full flex items-center justify-between relative rounded-br-2xl rounded-3xl 
             border border-solid border-dark bg-light shadow-2xl p-12">
-            <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark rounded-br-3xl"/>                
+            <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark rounded-br-3xl"/>
             <Link href={link} target="_blank" className="w-1/2 cursor-pointer overflow-hidden rounded-lg">
                 <FramerImage src={img} alt={title} className="w-full h-auto"
                     whileHover={{scale:1.05}}
@@ -71,7 +71,7 @@ const projects = () => {
             <main className="w-full mb-16 flex flex-col items-center justify-center">
                 <Layout className="pt-16">
                     <AnimatedText text="Imagination Trumps Knowledge!" className="mb-16"/>
-                        <div className="grid grid-cols-12 gap-24">                        
+                        <div className="grid grid-cols-12 gap-24">
                             <div className=" col-span-12">
                                 <FeaturedProject title="Crypto Screener Application"
                                     summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. 
