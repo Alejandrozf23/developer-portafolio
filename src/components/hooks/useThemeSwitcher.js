@@ -42,13 +42,10 @@ const useThemeSwitcher = () => {
         } else {
             window.localStorage.setItem("theme","light");
             document.documentElement.classList.remove("light");
-        }
-        return [mode, setMode];
+        }        
     }, [mode])
 
-    return(
-        <div>useThemeSwitcher</div>
-    )
+    return [mode, setMode];
 }
 
 export default useThemeSwitcher
