@@ -10,24 +10,26 @@ const useThemeSwitcher = () => {
 
         const handleChange = () => {
             if (userPref) {
-                let check = userPref === "dark" ? "dark" : "light";
+                let check = userPref === 'dark' ? 'dark' : 'light';
                 setMode(check);
-                if (check === "dark") {
-                    document.documentElement.classList.add("dark");
+                if (check === 'dark') {
+                    document.documentElement.classList.add('dark')
                 } else {
-                    document.documentElement.classList.remove("dark");
+                    document.documentElement.classList.remove('dark')
                 }
             } else {
-                let check =  mediaQuery.matches ? "dark" : "light";
+                let check = mediaQuery.matches ? 'dark' : 'light'
                 setMode(check);
-                
-                if (check === "dark") {
-                    document.documentElement.classList.add("dark");
+                window.localStorage.setItem("theme",check);
+                if (check === 'dark') {
+                    document.documentElement.classList.add('dark')
                 } else {
-                    document.documentElement.classList.remove("dark");
+                    document.documentElement.classList.remove('dark')
                 }
             }
         }
+
+        handleChange();
 
         mediaQuery.addEventListener("change", handleChange);
 
