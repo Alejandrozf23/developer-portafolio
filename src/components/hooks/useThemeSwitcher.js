@@ -33,6 +33,17 @@ const useThemeSwitcher = () => {
         return () => mediaQuery.removeEventListener("change", handleChange);
     }, []);
 
+    useEffect(() => {
+        if (mode === "dark") {
+            window.localStorage.setItem("theme","dark");
+            document.documentElement.classList.add("dark");
+        } else {
+            window.localStorage.setItem("theme","light");
+            document.documentElement.classList.remove("dark");
+        }
+    }, [mode]);
+
+    return [mode, setMode]
 }
 
 export default useThemeSwitcher
