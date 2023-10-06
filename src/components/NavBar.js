@@ -37,15 +37,11 @@ const NavBar = () => {
                 <motion.a href="https://www.linkedin.com/in/alejandro-de-jesús-zepeda-flores-5251161b6" target={"_blank"}
                     whileHover={{y:-3}} whileTap={{scale:0.9}} className="w-6 mx-3"><LinkedInIcon/></motion.a>
                 
-                <button onClick = {() => setMode(mode === "light"?"dark":"light")}
+                <button onClick = {() => {setMode(mode === 'light' ? 'dark' : 'light')}}
                     className={`ml-3 flex items-center justify-center rounded-full p-1 
-                        ${mode === "light"?"bg-dark text-light":"bg-light text-dark"}`}>
-                    {
-                        mode === "dark" ?
-                        <SunIcon className={"fill-dark"}/> :
-                        <MoonIcon className={"fill-dark"}/>
-
-                    }
+                        ${mode === 'light'?'bg-dark text-light' : 'bg-light text-dark'}`}>
+                        
+                    {mode === 'dark' ? <SunIcon className='fill-dark' /> : <MoonIcon className='fill-white' />}
                 </button>
             </nav>
             <div className="absolute left-[50%] top-2 translate-x-[-50%]">

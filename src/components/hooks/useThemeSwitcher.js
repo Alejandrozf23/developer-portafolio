@@ -19,7 +19,7 @@ const useThemeSwitcher = () => {
         const userPref = window.localStorage.getItem("theme");
 
         const handleChange = () => {
-            console.log(userPref);
+            
             if (userPref) {
                 let check = userPref === "dark" ? "dark" : "light";
                 setMode(check);
@@ -38,8 +38,8 @@ const useThemeSwitcher = () => {
                     document.documentElement.classList.remove("dark");
                 }
             }
-        }
-        
+            console.log(window.localStorage);
+        }        
         handleChange();
 
         mediaQuery.addEventListener('change', handleChange);
