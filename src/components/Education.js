@@ -8,9 +8,9 @@ const Details = ({type, time, place, link, info}) => {
         <LiIcon reference={ref}/>
         <motion.div initial={{y:50}} whileInView={{y:0}} transition={{duration:0.5, type:"spring"}}>
             <h3 className="capitalize font-bold text-2xl">{type}&nbsp;
-                <a href={link} target="_blank" className="text-primary capitalize">@{place}</a>
+                <a href={link} target="_blank" className="text-primary capitalize dark:text-primaryDark">@{place}</a>
             </h3>
-            <span className="capitalize font-medium text-dark/75">
+            <span className="capitalize font-medium text-dark/75 dark:text-light/75">
                 {time} | {place}
             </span>
             <p className="font-medium w-full">{info}</p>
@@ -32,7 +32,7 @@ const Education
         <div className="my-64">
             <h2 className="font-bold text-8x1 mb-32 w-full text-center">Education</h2>
             <div ref={ref} className="w-[75%] mx-auto relative">
-                <motion.div style={{scaleY:scrollYProgress}} className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top"/>
+                <motion.div style={{scaleY:scrollYProgress}} className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light"/>
                 <ul className="w-full flex flex-col items-start justify-between ml-4">
                     <Details type="Software Engineer" time="2016-2021" place="ESCOM" link="https://www.escom.ipn.mx/"
                         info="Training for web application development, including back services with Java and Python frameworks and database administration."/>
