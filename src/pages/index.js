@@ -24,13 +24,13 @@ export default function Home() {
             <div className='w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center'>
               <AnimatedText text="Hidden Services Architect? Backend Developer" 
                 className='!text-6x1 xl:!text-5x1 lg:!text-center lg:!text=6x1 md:!text-5x1 sm:!text-3x1'/>
-              <p className='my-4 text-base font-medium '>As a skilled full-stack developer, I am dedicated to turning ideas into innovative web 
+              <p className='my-4 text-base font-medium md:text-sm sm:text-xs'>As a skilled full-stack developer, I am dedicated to turning ideas into innovative web 
                 applications. Explore my latest projects and articles, showcasing my expertise in Spring, Django y React.js and web development.</p>
               <div className='flex items-center self-start mt-2 lg:self-center'>
                 <Link href="/dummy.pdf" target={"_blank"} className='flex items-center bg-dark text-light 
                   p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 
                   border-solid border-transparent hover:border-dark dark:bg-light dark:text-dark 
-                  hover:dark:bg-dark hover:dark:text-light hover:dark:border-light' 
+                  hover:dark:bg-dark hover:dark:text-light hover:dark:border-light md:p-2 md:px-4 md:text-base' 
                   download={true}>Resume <LinkArrow className={"w-6 ml-1"}/></Link>
               </div>
             </div>            
