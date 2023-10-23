@@ -5,7 +5,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { LinkArrow } from '@/components/Icons'
-import profilePic from "../../public/images/profile/developer-pic-1.png"
+import profilePic from "@/images/profile/developer-pic-1.png"
 import TransitionEffect from '@/components/TransitionEffect'
 
 export default function Home() {
