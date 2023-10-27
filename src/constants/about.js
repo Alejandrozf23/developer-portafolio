@@ -45,6 +45,9 @@ const data = {
                 },
             ]
         },
+        profile: {
+            picture: '/images/profile/developer02.jpg',
+        },
     },
 }
   

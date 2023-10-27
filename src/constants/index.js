@@ -7,7 +7,7 @@ const data = {
     },
   },
   profile: {
-    picture: '/profile/developer01.png',
+    picture: '/images/profile/developer01.png',
   },
   info: {
     title: 'Hidden Services Architect? Backend Developer',
