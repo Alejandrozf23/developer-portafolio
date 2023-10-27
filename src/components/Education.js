@@ -41,7 +41,7 @@ const Education = () => {
                 <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
                     {
                         educationList.map((detail) => (
-                            <Details type={detail.type} time={detail.time} place={detail.place} link={detail.link} info={detail.info}/>
+                            <Details key={detail.place} type={detail.type} time={detail.time} place={detail.place} link={detail.link} info={detail.info}/>
                         ))
                     }                    
                 </ul>

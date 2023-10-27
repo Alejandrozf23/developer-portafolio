@@ -25,7 +25,7 @@ const Skills = () => {
                         <div className='flex items-center xs:gap-[50px] gap-[80px] xs:mr-[50px] mr-[80px] w-auto'>
                         {
                             skillList.map((detail) => (
-                                <ImageSkills src={detail.link} name={detail.name}/>
+                                <ImageSkills key={detail.name} src={detail.link} name={detail.name}/>
                             ))
                         }
                                                         

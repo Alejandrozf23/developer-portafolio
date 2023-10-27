@@ -43,7 +43,7 @@ const Experience = () => {
                 <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
                     {
                         experienceList.map((detail) => (
-                            <Details position={detail.position} company={detail.company} time={detail.time} 
+                            <Details key={detail.company} position={detail.position} company={detail.company} time={detail.time} 
                                 address={detail.address} companyLink={detail.companyLink} work={detail.work}/>
                         ))
                     }
