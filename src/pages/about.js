@@ -50,7 +50,7 @@ const Description = () => {
     return(
         <>{
             experienceList.map((exps) => (
-                <div key={exps.number} className="flex flex-col items-end justify-center xl:items-center">
+                <div key={exps.number} className="flex flex-col items-center justify-center xl:items-center">
                     <span className="inline-block text-7xl font-bold md:text-6x1 sm:text-5x1 xs:text-4x1">
                         <AnimatedNumber value={exps.number}/>{exps.text}
                     </span>
