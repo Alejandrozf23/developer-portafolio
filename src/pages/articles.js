@@ -1,14 +1,12 @@
-import AnimatedText from "@/components/AnimatedText";
-import Layout from "@/components/Layout";
-import Head from "next/head";
-import Link from "next/link";
-import React, { useRef } from "react";
-import article1 from "../../public/images/articles/pagination component in reactjs.jpg";
-import article2 from "../../public/images/articles/create loading screen in react js.jpg";
-import article3 from "../../public/images/articles/create modal component in react using react portals.png";
-import Image from "next/image";
-import { motion, useMotionValue } from "framer-motion";
-import TransitionEffect from "@/components/TransitionEffect";
+import Head from 'next/head'
+import Link from 'next/link'
+import Image from 'next/image'
+import data from '@/constants/articles'
+import Layout from '@/components/Layout'
+import AnimatedText from '@/components/AnimatedText'
+import TransitionEffect from '@/components/TransitionEffect'
+import React, { useRef } from 'react'
+import { motion, useMotionValue } from 'framer-motion'
 
 const FramerImage = motion(Image);
 
@@ -34,7 +32,7 @@ const MovingImg = ({title, img, link}) => {
     return (
         <Link href={link} target="_blank" onMouseMove={handleMouse} onMouseLeave={handleMouseLeave}>
             <h2 className="capitalize text-x1 font-semibold hover:underline">{title}</h2>
-            <FramerImage style={{x:x, y:y}} 
+            <FramerImage style={{x:x, y:y}} width={200} height={100}
                 initial={{opacity:0}}
                 whileInView={{opacity:1, transition:{duration:0.2}}}                
                 ref={imgRef} src={img} alt={title} 
@@ -53,7 +51,7 @@ const Article = ({img, title, date, link}) => {
             justify-between bg-light text-dark first:mt-0 border border-solid border-dark
             border-r-4 border-b-4 dark:border-light dark:bg-dark dark:text-light
             sm:flex-col">
-            <MovingImg title={title} img={img} link={link}/>
+            <MovingImg title={title} img={img} link={link} width={200} height={100}/>
             <span className="text-primary font-semibold pl-4 dark:text-primaryDark sm:self-start sm:pl-0 xs:text-sm">{date}</span>
         </motion.li>
     )
@@ -64,7 +62,7 @@ const FeaturedArticle = ({img, title, time, summary, link}) => {
         <li className="relative col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl dark:bg-dark dark:border-light">
             <div className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl"/>
             <Link href={link} target="_blank" className="w-full inline-block cursor-pointer overflow-hidden rounded-lg">
-                <FramerImage src={img} alt={title} className="w-full h-auto" 
+                <FramerImage src={img} alt={title} className="w-full h-auto" width={200} height={100}
                     whileHover={{scale:1.05}}
                     transition={{duration:0.2}}
                     priority sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw'/>
@@ -79,6 +77,8 @@ const FeaturedArticle = ({img, title, time, summary, link}) => {
 }
 
 const articles = () => {
+    const articlesList = data.articles;
+
     return (
         <>
             <Head>
@@ -90,40 +90,36 @@ const articles = () => {
                 <Layout className="pt-16">
                     <AnimatedText text="Words can change the world!" className="mb-16 lg:!text-7x1 sm:mb-8 sm:!text-6x1 xs:!text-4x1"/>
                     <ul className="grid grid-cols-2 gap-16 md:grid-cols-1 lg:gap-8 md:gap-y-16">
-                        <FeaturedArticle 
-                            title="Build A Custom Pagination Component In Reactjs From Scratch"
-                            summary="Learn how to build a custom pagination component in ReactJS from scratch. 
-                            Follow this step-by-step guide to integrate Pagination component in your ReactJS project.
-                            9 min read"
-                            time="9 min read"
-                            link="/"
-                            img={article1}/>
-                        <FeaturedArticle 
-                            title="Build A Custom Pagination Component In Reactjs From Scratch"
-                            summary="Learn how to build a custom pagination component in ReactJS from scratch. 
-                            Follow this step-by-step guide to integrate Pagination component in your ReactJS project.
-                            9 min read"
-                            time="9 min read"
-                            link="/"
-                            img={article2}/>
+                        {
+                            articlesList.map((article) => {
+                                if (article.feature) {
+                                    return (
+                                        <FeaturedArticle key={article.id}
+                                            title={article.title}
+                                            summary={article.summary}
+                                            time={article.time}
+                                            link={article.link}
+                                            img={article.img} />
+                                    )
+                                } 
+                            })
+                        }
                     </ul>
-                    <h2 className="font-bold text-4x1 w-full text-center my-16 mt-32">All articles</h2>
+                    <h2 className="font-bold text-4x1 w-full text-center my-8 mt-16">All articles</h2>
                     <ul>
-                        <Article
-                            title="Form Validation In Reactsjs: Build a reusable custom hook for inputs and error handling"
-                            date="July 13, 2023"
-                            link="/"
-                            img={article3}/>
-                        <Article
-                            title="Form Validation In Reactsjs: Build a reusable custom hook for inputs and error handling"
-                            date="July 13, 2023"
-                            link="/"
-                            img={article3}/>
-                        <Article
-                            title="Form Validation In Reactsjs: Build a reusable custom hook for inputs and error handling"
-                            date="July 13, 2023"
-                            link="/"
-                            img={article3}/>
+                        {
+                            articlesList.map((article) => {
+                                if (!article.feature) {
+                                    return (
+                                        <Article key={article.id}
+                                            title={article.title}
+                                            date={article.date}
+                                            link={article.link}
+                                            img={article.img}/>
+                                    )
+                                } 
+                            })
+                        }
                     </ul>
                 </Layout>
             </main>
