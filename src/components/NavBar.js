@@ -1,10 +1,11 @@
-import Link from "next/link"
-import { useRouter } from "next/router"
-import React, { useState } from "react"
-import Logo from "./Logo"
-import {TwitterIcon, GithubIcon, LinkedInIcon, SunIcon, MoonIcon } from "./Icons"
-import {motion} from "framer-motion";
-import useThemeSwitcher from "./hooks/useThemeSwitcher"
+import Link from 'next/link'
+import Logo from './Logo'
+import data from '@/constants/navbar'
+import useThemeSwitcher from '@/components/hooks/useThemeSwitcher'
+import { useRouter } from 'next/router'
+import React, { useState } from 'react'
+import { GithubIcon, LinkedInIcon, SunIcon, MoonIcon } from './Icons'
+import { motion } from 'framer-motion'
 
 const CustomLink = ({href, title, className=""}) => {
     const router = useRouter();
@@ -47,6 +48,8 @@ const NavBar = () => {
         setIsOpen(!isOpen);
     }
 
+    const menuList = data.menu;
+
     return (
         <header className="w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light relative z-10 lg:px-16 md:px-12 sm:px-8">
             <button className="flex-col justify-center items-center hidden lg:flex" onClick={handleClick}>
@@ -60,15 +63,16 @@ const NavBar = () => {
             
             <div className="w-full flex justify-between items-center lg:hidden">
                 <nav>
-                    <CustomLink href="/" title="Home" className="mr-4"/>
-                    <CustomLink href="/about" title="About" className="mx-4"/>
-                    <CustomLink href="/projects" title="Projects" className="mr-4"/>
-                    <CustomLink href="/articles" title="Articles" className="ml-4"/>
+                    {
+                        menuList.map((menu) => (
+                            <CustomLink key={menu.key} href={menu.href} title={menu.title} className={menu.classname}/>
+                        ))
+                    }
                 </nav>
                 <nav className="flex items-center justify-center flex-wrap">
-                    <motion.a href="https://github.com/Alejandrozf23" target={"_blank"} 
+                    <motion.a href={data.github} target={"_blank"} 
                         whileHover={{y:-3}} whileTap={{scale:0.9}} className="w-6 mr-3"><GithubIcon/></motion.a>
-                    <motion.a href="https://www.linkedin.com/in/alejandro-de-jesús-zepeda-flores-5251161b6" target={"_blank"}
+                    <motion.a href={data.linkedin} target={"_blank"}
                         whileHover={{y:-3}} whileTap={{scale:0.9}} className="w-6 mx-3"><LinkedInIcon/></motion.a>
                     
                     <button onClick = {() => {setMode(mode === 'light' ? 'dark' : 'light')}}
