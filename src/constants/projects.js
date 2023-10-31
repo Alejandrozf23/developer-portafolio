@@ -1,4 +1,5 @@
 const data = {
+    title: 'Imagination Trumps Knowledge!',
     projects: [
         {
             id: 'P-001',

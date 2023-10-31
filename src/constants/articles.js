@@ -1,4 +1,5 @@
 const data = {
+    title: 'Words can change the world!',
     articles: [
         {
             id: 'A-001',

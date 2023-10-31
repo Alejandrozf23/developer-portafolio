@@ -78,7 +78,7 @@ const projects = () => {
             <TransitionEffect/>
             <main className="w-full mb-16 flex flex-col items-center justify-center dark:text-light">
                 <Layout className="pt-16">
-                    <AnimatedText text="Imagination Trumps Knowledge!" className="mb-16 first-letter lg:!text-7x1 sm:mb-8 sm:!text-6x1 xs:!text-4x1"/>
+                    <AnimatedText text={data.title} className="mb-16 first-letter lg:!text-7x1 sm:mb-8 sm:!text-6x1 xs:!text-4x1"/>
                         <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
                             {
                                 projectsList.map((project) => {

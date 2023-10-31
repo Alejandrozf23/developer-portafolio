@@ -88,7 +88,7 @@ const articles = () => {
             <TransitionEffect/>
             <main className="w-full mb-16 flex flex-col items-center justify-center overflow-hidden dark:text-light">
                 <Layout className="pt-16">
-                    <AnimatedText text="Words can change the world!" className="mb-16 lg:!text-7x1 sm:mb-8 sm:!text-6x1 xs:!text-4x1"/>
+                    <AnimatedText text={data.title} className="mb-16 lg:!text-7x1 sm:mb-8 sm:!text-6x1 xs:!text-4x1"/>
                     <ul className="grid grid-cols-2 gap-16 md:grid-cols-1 lg:gap-8 md:gap-y-16">
                         {
                             articlesList.map((article) => {
