@@ -4,7 +4,9 @@ import data from '@/constants/navbar'
 import useThemeSwitcher from '@/components/hooks/useThemeSwitcher'
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
-import { GithubIcon, LinkedInIcon, SunIcon, MoonIcon } from './Icons'
+import { GithubIcon } from '@/icons/GithubIcon'
+import { LinkedInIcon } from '@/icons/LinkedInIcon'
+import { SunIcon, MoonIcon } from './Icons'
 import { motion } from 'framer-motion'
 
 const CustomLink = ({href, title, className=""}) => {
