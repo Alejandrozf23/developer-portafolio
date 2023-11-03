@@ -96,9 +96,9 @@ const NavBar = () => {
                             <CustomMobileLink href="/articles" title="Articles" className="" toggle={handleClick}/>
                         </nav>
                         <nav className="flex items-center justify-center flex-wrap mt-2">
-                            <motion.a href="https://github.com/Alejandrozf23" target={"_blank"} 
+                            <motion.a href={data.github} target={"_blank"} 
                                 whileHover={{y:-3}} whileTap={{scale:0.9}} className="w-6 mr-3 sm:mx-1 bg-light rounded-full dark:bg-dark"><GithubIcon/></motion.a>
-                            <motion.a href="https://www.linkedin.com/in/alejandro-de-jesús-zepeda-flores-5251161b6" target={"_blank"}
+                            <motion.a href={data.linkedin} target={"_blank"}
                                 whileHover={{y:-3}} whileTap={{scale:0.9}} className="w-6 mx-3 sm:mx-1"><LinkedInIcon/></motion.a>
                             
                             <button onClick = {() => {setMode(mode === 'light' ? 'dark' : 'light')}}
