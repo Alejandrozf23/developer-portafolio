@@ -92,10 +92,11 @@ const NavBar = () => {
                         className="min-w-[70vw] flex flex-col justify-between items-center fixed top-1/2 left-1/2 -translate-x-1/2 
                         -translate-y-1/2 z-30 bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32">
                         <nav className="flex items-center flex-col justify-center">
-                            <CustomMobileLink href="/" title="Home" className="" toggle={handleClick}/>
-                            <CustomMobileLink href="/about" title="About" className="" toggle={handleClick}/>
-                            <CustomMobileLink href="/projects" title="Projects" className="" toggle={handleClick}/>
-                            <CustomMobileLink href="/articles" title="Articles" className="" toggle={handleClick}/>
+                            {
+                                menuList.map((menu) => (
+                                    <CustomMobileLink key={menu.key} href={menu.href} title={menu.title} className="" toggle={handleClick}/>
+                                ))
+                            }
                         </nav>
                         <nav className="flex items-center justify-center flex-wrap mt-2">
                             <motion.a href={data.github} target={"_blank"} 
