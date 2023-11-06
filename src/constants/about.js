@@ -13,25 +13,25 @@ const data = {
             description: [
                 {
                     id: '001',
-                    paragraph: '- Hi, I\'m CodeBucks, a web developer and UI/UX designer with a passion for creating beautiful, functional, and user-centered digital experiences. With 4 years of experience in the field. I am always looking for new and innovative ways to bring my clients\' visions to life.',
+                    paragraph: '- Hi! I\'ve been developing website services since I was 22 years old. I started my web development career with JAVA and Python as native languages and then continued with the Spring and Django frameworks.',
                     className: 'font-medium'
                 },
                 {
                     id: '002',
-                    paragraph: '- I believe that design is about more than just making things look pretty – it\'s about solving problems and creating intuitive, enjoyable experiences for users.',
+                    paragraph: '- Although my profile is oriented to backend services, because in my career I have worked as a backend developer, I also have experience with frameworks to develop front views such as Angular, React, Tailwind and Next JS and database administrators such as Oracle, SQL, Mongo and Redis.',
                     className: 'my-4 font-medium'
                 },
                 {
                     id: '003',
-                    paragraph: '- Whether I\'m working on a website, mobile app, or other digital product, I bring my commitment to design excellence and user-centered thinking to every project I work on. I look forward to the opportunity to bring my skills and passion to your next project.',
+                    paragraph: '- Whether I\'m working on a website, a real-time processing application, designing a view or managing a database, I\'m always developing new skills and updating myself with the needs and technologies that are on the market.',
                     className: 'font-medium'
                 },
             ],
             experience: [
                 {
-                    number: 50,
+                    number: 10,
                     text: '+',
-                    description: 'satisfied clients!'
+                    description: 'Coding Years'
                 },
                 {
                     number: 40,
