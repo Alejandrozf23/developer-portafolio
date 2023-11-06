@@ -31,7 +31,7 @@ const data = {
                 {
                     number: 10,
                     text: '+',
-                    description: 'Coding Years'
+                    description: 'coding Years'
                 },
                 {
                     number: 40,

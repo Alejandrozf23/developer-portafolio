@@ -22,7 +22,7 @@ const data = {
             time: '2023-Present',
             address: 'Mexico City',
             companyLink: 'https://www.bluetab.net/es/',
-            work: 'Design and implementation of libraries for both SQL and NoSQL database connection utilities, Kafka publishers and consumers and develop microservices for propagable events with the premise of event-oriented distribution. Implementation of event-oriented architecture with the purpose of triggering and establishing communication between decoupled microservices.'
+            work: 'Design and implementation of services for registration, updating and elimination of campaigns and offers to offer products to the clients of a banking institution according to their type of account.'
         },
     ]
 }
