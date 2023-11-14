@@ -78,11 +78,10 @@ const NavBar = () => {
                         iconsList.map((icon) => (
                             <motion.a key={icon.key} href={icon.path} target={"_blank"} 
                                 whileHover={{y:-3}} whileTap={{scale:0.9}} className="w-6 mr-3">
-                                    {icon.key === "github" ? <GithubIcon /> : icon.key === "linkedin" ? <LinkedInIcon /> : null}
+                                {icon.key === "github" ? <GithubIcon /> : icon.key === "linkedin" ? <LinkedInIcon /> : null}
                             </motion.a>
                         ))
-                    }
-                    
+                    }                    
                     <button onClick = {() => {setMode(mode === 'light' ? 'dark' : 'light')}}
                         className={`ml-3 flex items-center justify-center rounded-full p-1 
                             ${mode === 'light'?'bg-dark text-light' : 'bg-light text-dark'}`}>
@@ -105,11 +104,14 @@ const NavBar = () => {
                             }
                         </nav>
                         <nav className="flex items-center justify-center flex-wrap mt-2">
-                            <motion.a href={data.github} target={"_blank"} 
-                                whileHover={{y:-3}} whileTap={{scale:0.9}} className="w-6 mr-3 sm:mx-1 bg-light rounded-full dark:bg-dark"><GithubIcon/></motion.a>
-                            <motion.a href={data.linkedin} target={"_blank"}
-                                whileHover={{y:-3}} whileTap={{scale:0.9}} className="w-6 mx-3 sm:mx-1"><LinkedInIcon/></motion.a>
-                            
+                            {
+                                iconsList.map((icon) => (
+                                    <motion.a key={icon.key} href={icon.path} target={"_blank"} 
+                                        whileHover={{y:-3}} whileTap={{scale:0.9}} className={icon.classname}>
+                                        {icon.key === "github" ? <GithubIcon /> : icon.key === "linkedin" ? <LinkedInIcon /> : null}
+                                    </motion.a>
+                                ))
+                            }                          
                             <button onClick = {() => {setMode(mode === 'light' ? 'dark' : 'light')}}
                                 className={`ml-3 flex items-center justify-center rounded-full p-1 
                                     ${mode === 'light'?'bg-dark text-light' : 'bg-light text-dark'}`}>

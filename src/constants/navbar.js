@@ -30,11 +30,13 @@ const data = {
             key: 'github',
             name: "GithubIcon",
             path: 'https://github.com/Alejandrozf23',
+            classname: 'w-6 mr-3 sm:mx-1 bg-light rounded-full dark:bg-dark',
         },
         {
             key: 'linkedin',
             name: "LinkedInIcon",
             path: 'https://www.linkedin.com/in/alejandro-de-jesús-zepeda-flores-5251161b6',
+            classname: 'w-6 mx-3 sm:mx-1',
         }
     ]
 }
