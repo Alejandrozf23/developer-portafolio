@@ -1,12 +1,13 @@
-import Link from 'next/link'
 import Logo from './Logo'
+import Link from 'next/link'
 import data from '@/constants/navbar'
 import useThemeSwitcher from '@/components/hooks/useThemeSwitcher'
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import { GithubIcon } from '@/icons/GithubIcon'
 import { LinkedInIcon } from '@/icons/LinkedInIcon'
-import { SunIcon, MoonIcon } from './Icons'
+import { SunIcon } from '@/icons/SunIcon'
+import { MoonIcon } from '@/icons/MoonIcon'
 import { motion } from 'framer-motion'
 
 const CustomLink = ({href, title, className=""}) => {
@@ -51,6 +52,7 @@ const NavBar = () => {
     }
 
     const menuList = data.menu;
+    const iconsList = data.icons;
 
     return (
         <header className="w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light relative z-10 lg:px-16 md:px-12 sm:px-8">
@@ -72,10 +74,14 @@ const NavBar = () => {
                     }
                 </nav>
                 <nav className="flex items-center justify-center flex-wrap">
-                    <motion.a href={data.github} target={"_blank"} 
-                        whileHover={{y:-3}} whileTap={{scale:0.9}} className="w-6 mr-3"><GithubIcon/></motion.a>
-                    <motion.a href={data.linkedin} target={"_blank"}
-                        whileHover={{y:-3}} whileTap={{scale:0.9}} className="w-6 mx-3"><LinkedInIcon/></motion.a>
+                    {
+                        iconsList.map((icon) => (
+                            <motion.a key={icon.key} href={icon.path} target={"_blank"} 
+                                whileHover={{y:-3}} whileTap={{scale:0.9}} className="w-6 mr-3">
+                                    {icon.key === "github" ? <GithubIcon /> : icon.key === "linkedin" ? <LinkedInIcon /> : null}
+                            </motion.a>
+                        ))
+                    }
                     
                     <button onClick = {() => {setMode(mode === 'light' ? 'dark' : 'light')}}
                         className={`ml-3 flex items-center justify-center rounded-full p-1 

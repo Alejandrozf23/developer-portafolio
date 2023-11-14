@@ -1,6 +1,4 @@
 const data = {
-    github: 'https://github.com/Alejandrozf23',
-    linkedin: 'https://www.linkedin.com/in/alejandro-de-jesús-zepeda-flores-5251161b6',
     menu: [
         {
             key: 'Menu-001',
@@ -26,6 +24,18 @@ const data = {
             title: 'Articles',
             classname: 'ml-4',
         },
+    ],
+    icons: [
+        {
+            key: 'github',
+            name: "GithubIcon",
+            path: 'https://github.com/Alejandrozf23',
+        },
+        {
+            key: 'linkedin',
+            name: "LinkedInIcon",
+            path: 'https://www.linkedin.com/in/alejandro-de-jesús-zepeda-flores-5251161b6',
+        }
     ]
 }
 
